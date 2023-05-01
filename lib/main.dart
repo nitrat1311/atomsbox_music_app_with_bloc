@@ -4,6 +4,7 @@ import 'package:audio_service/audio_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'repositories/song_repository.dart';
 import 'ui/home/views/home_screen.dart';
 
 Future<void> main() async {
@@ -32,9 +33,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiRepositoryProvider(
       providers: [
-        // RepositoryProvider<SongRepository>(
-        //   create: (context) => SongRepository(audioHandler: _audioHandler),
-        // ),
+        RepositoryProvider<SongRepository>(
+          create: (context) => SongRepository(audioHandler: _audioHandler),
+        ),
       ],
       child: MaterialApp(
         title: 'Flutter Demo',
