@@ -8,6 +8,7 @@ class Song {
   final String imageUrl;
   final String? songPath;
   final String? songUrl;
+  final bool isTrending;
 
   Song({
     this.id = '',
@@ -16,6 +17,7 @@ class Song {
     required this.imageUrl,
     this.songUrl,
     this.songPath,
+    this.isTrending = true,
   }) : assert(songUrl != null || songPath != null);
 
   // factory Song.fromMediaItem(MediaItem mediaItem) {
