@@ -1,7 +1,9 @@
 import 'package:atomsbox/atomsbox.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../models/song.dart';
+import '../../../repositories/song_repository.dart';
 
 part 'widgets/_trending_songs_section.dart';
 

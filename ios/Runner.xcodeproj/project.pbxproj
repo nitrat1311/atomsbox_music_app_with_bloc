@@ -121,7 +121,6 @@
 				B7173072C69B1A698C2A9CC0 /* Pods-Runner.release.xcconfig */,
 				5B855C47C614A003E0F13B56 /* Pods-Runner.profile.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
