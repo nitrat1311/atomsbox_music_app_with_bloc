@@ -2,12 +2,14 @@ import 'package:atomsbox/atomsbox.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../models/music_player_data.dart';
 import '../../../models/song.dart';
 import '../../../repositories/song_repository.dart';
 import '../../widgets/music_player/music_player.dart';
 import '../blocs/home/home_bloc.dart';
 
 part 'widgets/_trending_songs_section.dart';
+part 'widgets/_new_releases_section.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -49,6 +51,8 @@ class HomeView extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     _TrendingSongsSection(trendingSongs: state.trendingSongs),
+                    const SizedBox(height: AppConstants.lg),
+                    _NewReleaseSection(newReleases: state.newReleases),
                   ],
                 ),
               ),
