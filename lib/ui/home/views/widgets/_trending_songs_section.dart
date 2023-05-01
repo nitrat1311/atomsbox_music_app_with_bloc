@@ -1,11 +1,14 @@
 part of '../home_screen.dart';
 
 class _TrendingSongsSection extends StatelessWidget {
-  const _TrendingSongsSection({super.key});
+  const _TrendingSongsSection({
+    required this.trendingSongs,
+  });
+
+  final List<Song> trendingSongs;
 
   @override
   Widget build(BuildContext context) {
-    final trendingSongs = Song.songs.where((song) => song.isTrending).toList();
     return AppGrid(
       title: AppText('Trending Now'),
       gridSettings: const AppGridSettings(

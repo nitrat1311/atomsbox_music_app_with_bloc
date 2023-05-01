@@ -10,6 +10,32 @@ class SongRepository {
 
   final AudioHandler _audioHandler;
 
+  Future<List<Song>?> getSongs() async {
+    try {
+      List<Song> songs = await Future.delayed(
+        const Duration(seconds: 1),
+        () => Song.songs,
+      );
+
+      return songs;
+    } catch (_) {
+      return null;
+    }
+  }
+
+  Future<Song?> getSongById(String songId) async {
+    try {
+      Song? song = await Future.delayed(
+        const Duration(seconds: 1),
+        () => Song.songs.where((song) => song.id == songId).first,
+      );
+
+      return song;
+    } catch (_) {
+      return null;
+    }
+  }
+
   void play() => _audioHandler.play();
 
   void pause() => _audioHandler.pause();
