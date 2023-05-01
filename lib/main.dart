@@ -1,4 +1,5 @@
 import 'package:atomsbox/atomsbox.dart';
+import 'package:atomsbox_music_app_with_bloc/ui/widgets/music_player/blocs/music_player/music_player_bloc.dart';
 import 'package:audio_handler/audio_handler.dart';
 import 'package:audio_service/audio_service.dart';
 import 'package:flutter/material.dart';
@@ -37,10 +38,19 @@ class MyApp extends StatelessWidget {
           create: (context) => SongRepository(audioHandler: _audioHandler),
         ),
       ],
-      child: MaterialApp(
-        title: 'Flutter Demo',
-        theme: AppTheme.darkTheme,
-        home: const HomeScreen(),
+      child: MultiBlocProvider(
+        providers: [
+          BlocProvider(
+            create: (context) => MusicPlayerBloc(
+              songRepository: context.read<SongRepository>(),
+            )..add(MusicPlayerStarted()),
+          ),
+        ],
+        child: MaterialApp(
+          title: 'Flutter Demo',
+          theme: AppTheme.darkTheme,
+          home: const HomeScreen(),
+        ),
       ),
     );
   }
