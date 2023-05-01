@@ -6,6 +6,7 @@ import '../../../models/music_player_data.dart';
 import '../../../models/song.dart';
 import '../../../repositories/song_repository.dart';
 import '../../widgets/music_player/music_player.dart';
+import '../../widgets/widgets.dart';
 import '../blocs/home/home_bloc.dart';
 
 part 'widgets/_trending_songs_section.dart';
@@ -35,6 +36,7 @@ class HomeView extends StatelessWidget {
         centerTitle: false,
         title: AppText.headlineSmall('Good evening!'),
       ),
+      bottomNavigationBar: const BottomNavBar(index: 0),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: const MusicPlayer(dense: true),
       body: BlocBuilder<HomeBloc, HomeState>(
