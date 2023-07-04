@@ -55,7 +55,8 @@ class Song {
       id: '1',
       artist: Artist(id: '1', name: 'Slowya Roll'),
       title: 'Crystal Bloom',
-      songPath: 'assets/songs/crystal_bloom__slowya_roll.mp3',
+    
+      songUrl: 'https://drive.google.com/uc?export=view&id=1O-di4uCeKD_jd7ATgqGbCBdjRh3ljk6D',
       imageUrl:
           'https://images.unsplash.com/photo-1569521588854-9b461abc92ac?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
     ),

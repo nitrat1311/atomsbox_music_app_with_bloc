@@ -41,17 +41,22 @@ class _NewReleaseSection extends StatelessWidget {
                       ),
                       title: AppText(song.title),
                       subtitle: AppText(song.artist.name),
-                      trailing: AppIconButton(
-                        onPressed: () {
-                          if (song.id == currentSong?.id &&
-                              audioPlayerState == AudioPlayerState.playing) {
-                            context.read<SongRepository>().pause();
-                          } else {
-                            context.read<SongRepository>().setCurrentSong(song);
-                            context.read<SongRepository>().play();
-                          }
-                        },
-                        child: const Icon(Icons.play_arrow),
+                      trailing: Column(
+                        children: [
+                          DownloadButton(data: song),
+                          AppIconButton(
+                            onPressed: () {
+                              if (song.id == currentSong?.id &&
+                                  audioPlayerState == AudioPlayerState.playing) {
+                                context.read<SongRepository>().pause();
+                              } else {
+                                context.read<SongRepository>().setCurrentSong(song);
+                                context.read<SongRepository>().play();
+                              }
+                            },
+                            child: const Icon(Icons.play_arrow),
+                          ),
+                        ],
                       ),
                     ),
                   )

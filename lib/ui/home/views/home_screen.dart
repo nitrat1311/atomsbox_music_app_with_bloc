@@ -2,6 +2,7 @@ import 'package:atomsbox/atomsbox.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../download.dart';
 import '../../../models/music_player_data.dart';
 import '../../../models/song.dart';
 import '../../../repositories/song_repository.dart';
